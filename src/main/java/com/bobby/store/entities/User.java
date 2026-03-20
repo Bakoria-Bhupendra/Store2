@@ -70,5 +70,12 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Profile profile;
 
+    @ManyToMany
+    @JoinTable(
+            name = "whishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<Product> favproducts = new HashSet<>();
 
 }
