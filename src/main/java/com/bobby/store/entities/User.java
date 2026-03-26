@@ -78,4 +78,8 @@ public class User {
     )
     private Set<Product> favproducts = new HashSet<>();
 
+    public void  addFavProduct(Product product) {
+        favproducts.add(product);
+    }
+
 }
